@@ -1,0 +1,39 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap');
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Open Sans', sans-serif;
+	margin: 0px;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 600px;
+	height: 100vh;
+	border-left: solid rgba(50,50,50,0.5) 1px;	
+	border-right: solid rgba(50,50,50,0.5) 1px;		
+}
+
+.img-agenda {
+	border: solid rgb(255,255,255) 1px;
+}
+
+.btn-acessar {
+	background-color: #48f;
+	padding: 10px 30px;
+	border-radius: 10px;
+	text-decoration: none;
+	color: #fff;
+	transition: all 200ms;
+}
+
+.btn-acessar:hover {
+	background-color: #6af;
+}
+
