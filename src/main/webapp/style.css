@@ -24,7 +24,7 @@ body {
 	border: solid rgb(255,255,255) 1px;
 }
 
-.btn-acessar {
+.btn1 {
 	background-color: #48f;
 	padding: 10px 30px;
 	border-radius: 10px;
@@ -33,7 +33,7 @@ body {
 	transition: all 200ms;
 }
 
-.btn-acessar:hover {
+.btn1:hover {
 	background-color: #6af;
 }
 
