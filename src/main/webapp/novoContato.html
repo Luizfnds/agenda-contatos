@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Agenda de contatos</title>
+	<link rel="icon" href="imagens/favicon.png">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<h1>Adicionar novo contato</h1>
+	<form name="form-novo-contato" class="form-novo-contato" action="insert">
+		<input class="input-nome" type="text" name="nome" placeholder="Nome">
+		<input class="input-telefone" type="tel" name="telefone" placeholder="Telefone">
+		<input type="email" name="email" placeholder="Email">
+		
+		<button class="btn1" onclick="validar()">Adicionar</button>
+	</form>
+	
+	<script src="scripts/validador.js"></script>
+</body>
+</html>

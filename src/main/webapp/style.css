@@ -9,6 +9,11 @@ body {
 	margin: 0px;
 }
 
+input {
+	height: 25px;
+	width: 200px;
+}
+
 .container {
 	display: flex;
 	flex-direction: column;
@@ -27,6 +32,7 @@ body {
 .btn1 {
 	background-color: #48f;
 	padding: 10px 30px;
+	border: none;
 	border-radius: 10px;
 	text-decoration: none;
 	color: #fff;
@@ -35,5 +41,11 @@ body {
 
 .btn1:hover {
 	background-color: #6af;
+}
+
+.form-novo-contato {
+	display: flex;
+	flex-direction: column;
+	row-gap: 10px
 }
 

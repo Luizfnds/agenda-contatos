@@ -2,7 +2,7 @@ package model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.PreparedStatement;
 
 public class DAO {
 	/** Módulo de conexão **/
@@ -34,5 +34,24 @@ public class DAO {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
+	}
+	
+	public void insert(JavaBeans contato) {
+		try {
+			String create = "INSERT INTO contatos (nome, telefone, email) VALUES (?,?,?)";
+			
+			Connection con = conectar();
+			PreparedStatement ps = con.prepareStatement(create);
+					
+			ps.setString(1, contato.getNome());
+			ps.setString(2, contato.getTelefone());
+			ps.setString(3, contato.getEmail());
+			
+			ps.executeUpdate();
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		} 
+		
 	}
 }
