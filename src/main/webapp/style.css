@@ -29,7 +29,7 @@ input {
 	border: solid rgb(255,255,255) 1px;
 }
 
-.btn1 {
+.btn1, .btn2 {
 	background-color: #48f;
 	padding: 10px 30px;
 	border: none;
@@ -37,10 +37,24 @@ input {
 	text-decoration: none;
 	color: #fff;
 	transition: all 200ms;
+	cursor: pointer;
 }
 
-.btn1:hover {
+.btn2 {
+	padding: 5px 15px;
+}
+
+.btn-vermelho {
+	background-color: #f55;
+}
+
+.btn1:hover,
+.btn2:hover {
 	background-color: #6af;
+}
+
+.btn-vermelho:hover {
+	background-color: #f88;
 }
 
 .form-novo-contato {
@@ -55,7 +69,7 @@ input {
 }
 
 #tabela th {
-	border: 1px solid #000;
+	border: 1px solid rgba(0,0,0,0.2);
 	padding: 10px;
 	text-align: left;
 	background-color: #48f;
@@ -63,7 +77,7 @@ input {
 }
 
 #tabela td {
-	border: 1px solid #000;
+	border: 1px solid rgba(0,0,0,0.2);
 	padding: 10px;
 	text-align: left;
 }
