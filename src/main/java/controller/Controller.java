@@ -32,11 +32,14 @@ public class Controller extends HttpServlet {
 			listarContato(request, response);
 		} else if (action.equals("/update")) {
 			editarContato(request, response);
+		}  else if (action.equals("/delete")) {
+			removerContato(request, response);
+		//} else if (action.equals("/report")) {
+		//	gerarRelatorio(request, response);
 		} else {
 			response.sendRedirect("index.html");
 		}
 	}
-
 
 	protected void contatos(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -78,5 +81,41 @@ public class Controller extends HttpServlet {
 		response.sendRedirect("main");
 	}
 	
+	protected void removerContato(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		contato.setIdcon(request.getParameter("idcon"));
+		dao.deletarContato(contato);
+		response.sendRedirect("main");
+	}
 	
+	/*protected void gerarRelatorio(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		Document documento = new Document();
+		try {
+			response.setContentType("apllication/pdf");
+			response.addHeader("Content-Disposition", "inline; filename=" + "contatos.pdf");
+			PdfWriter.getInstance(documento, response.getOutputStream());
+			documento.open();
+			documento.add(new Paragraph("Lista de contatos:"));
+			documento.add(new Paragraph(" "));
+			PdfPTable tabela = new PdfPTable(3);
+			PdfPCell col1 = new PdfPCell(new Paragraph("Nome"));
+			PdfPCell col2 = new PdfPCell(new Paragraph("Fone"));
+			PdfPCell col3 = new PdfPCell(new Paragraph("E-mail"));
+			tabela.addCell(col1);
+			tabela.addCell(col2);
+			tabela.addCell(col3);
+			ArrayList<JavaBeans> lista = dao.listarContatos();
+			for (int i = 0; i < lista.size(); i++) {
+				tabela.addCell(lista.get(i).getNome());
+				tabela.addCell(lista.get(i).getFone());
+				tabela.addCell(lista.get(i).getEmail());
+			}
+			documento.add(tabela);
+			documento.close();
+		} catch (Exception e) {
+			System.out.println(e);
+			documento.close();
+		}
+	}*/
 }

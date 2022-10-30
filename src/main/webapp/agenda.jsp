@@ -34,11 +34,12 @@
 					<td><%=lista.get(i).getEmail()%></td>
 					<td>
 						<a href="select?idcon=<%= lista.get(i).getIdcon() %>" class="btn2">Editar</a>
-						<a href="" class="btn2 btn-vermelho">Remover</a>
+						<a href="javascript: confirmar(<%=lista.get(i).getIdcon()%>)" class="btn2 btn-vermelho">Remover</a>
 					</td>
 				</tr>
 			<%} %>
 		</tbody>
 	</table>
+	<script src="scripts/confirmador.js"></script>
 </body>
 </html>
