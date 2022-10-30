@@ -1,12 +1,13 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.websocket.server.PathParam;
 import model.DAO;
 import model.JavaBeans;
 
@@ -30,11 +31,16 @@ public class Controller extends HttpServlet {
 		}
 	}
 
+	// listar todos os contatos
 	protected void contatos(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.sendRedirect("agenda.jsp");
+		ArrayList<JavaBeans> lista = dao.listarContatos();
+		request.setAttribute("contatos", lista);
+		RequestDispatcher rd = request.getRequestDispatcher("agenda.jsp");
+		rd.forward(request, response);
 	}
 	
+	// inserir novo contato
 	protected void insert(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String nome = request.getParameter("nome");
 		String telefone = request.getParameter("telefone");
